@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>success</h2>
+    <!-- th:text=""将div文本内容设置为 -->
+    <div th:text="${hello}">欢迎~</div>
+    <hr>
+    <div th:text="${hello}"></div>
+    -[[${hello}]]-
+    <div th:utext="hello"></div>
+    =[(${hello})]=
+    <!-- th:each每次遍历都会生成当前这个标签 -->
+    <b th:each="u:${users}" th:text="${u}"></b>
+    <br>
+    <div>
+        <ul>
+            <li th:each="u:${users}" th:text="${u}"></li>
+        </ul>
+        <hr>
+        <ul>
+            <li th:each="u:${users}">[[${u}]]</li>
+        </ul>
+    </div>
+
+</body>
+</html>
